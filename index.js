@@ -1,3 +1,9 @@
+function receivesAFunction(spy){
+spy();
+}
+
+function returnsANamedFunction() { return "before all" ; }
+
 function morningRoutine(exercise) {
     let breakfast;
   
@@ -11,19 +17,4 @@ function morningRoutine(exercise) {
   
     exerciseRoutine(exercise);
   
-    // we could give this function a name if we wanted to, but since
-    // it's only available _inside_ morningRoutine(), we don't need to
-    return function() {
-      console.log(`Nom nom nom, this ${breakfast} is delicious!`);
-    }
-  } 
-
-  const afterExercise = morningRoutine(liftWeights);
-// LOG: Go for a five-mile run
-// LOG: Pump iron
-
-afterExercise;
-//=> ƒ () { console.log(`Nom nom nom, this ${breakfast} is delicious!`); } 
-
-afterExercise();
-// LOG: Nom nom nom, this protein bar is delicious! 
+  }
